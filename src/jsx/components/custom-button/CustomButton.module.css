@@ -1,0 +1,36 @@
+.btn {
+  cursor: pointer;
+  width: auto;
+  text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 12px;
+  padding-left: 12px;
+  border-radius: 8px;
+  color: var(--primary-color);
+  border: none;
+  background-color: var(--accent-color);
+  font-family: inherit;
+  font-size: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.btn:hover,
+.bth:focus {
+  background-color: var(--btn-accent-color);
+}
+
+@media screen and (min-width: 768px) {
+  .btn {
+    padding-right: 16px;
+    padding-left: 16px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .btn {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
