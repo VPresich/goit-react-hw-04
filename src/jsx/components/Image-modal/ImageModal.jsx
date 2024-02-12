@@ -2,7 +2,7 @@ import Modal from 'react-modal';
 import { RxExit } from 'react-icons/rx';
 import styles from './ImageModal.module.css';
 
-const ImageModal = (isOpen, image, onCloseClick) => {
+const ImageModal = ({ isOpen, image, onCloseClick }) => {
   return (
     <>
       <Modal

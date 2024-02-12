@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react';
-import { RxExit } from 'react-icons/rx';
 import clsx from 'clsx';
+
 import Modal from 'react-modal';
+// import { RxExit } from 'react-icons/rx';
 
 import SearchBar from './search-bar/SearchBar';
 import ErrorMessage from './error-message/ErrorMessage';
 import ImageGallery from './image-gallery/ImageGallery';
 import Loader from './loader/Loader';
 import LoadMoreBtn from './loadmore-btn/LoadMoreBtn';
+import ImageModal from './Image-modal/ImageModal';
 
 import { fetchData } from '../api/fetch-data';
-// import { CustomModal } from './custom-modal/CustomModal';
-
 import styles from './App.module.css';
 
 const App = () => {
@@ -24,6 +24,11 @@ const App = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  // useEffect(() => {
+  //   ImageModal.setAppElement('#root');
+  // }, []);
+
   useEffect(() => {
     Modal.setAppElement('#root');
   }, []);
@@ -81,7 +86,12 @@ const App = () => {
           onClick={handleMore}
         ></LoadMoreBtn>
       </div>
-      <Modal
+      <ImageModal
+        isOpen={modalIsOpen}
+        image={selectedImage}
+        onCloseClick={closeModal}
+      />
+      {/* <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         overlayClassName={styles.backdrop}
@@ -107,7 +117,7 @@ const App = () => {
             </>
           )}
         </div>
-      </Modal>
+      </Modal> */}
     </div>
   );
 };
