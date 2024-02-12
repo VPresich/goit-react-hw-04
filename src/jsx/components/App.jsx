@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-
 import Modal from 'react-modal';
-// import { RxExit } from 'react-icons/rx';
 
 import SearchBar from './search-bar/SearchBar';
 import ErrorMessage from './error-message/ErrorMessage';
@@ -24,10 +22,6 @@ const App = () => {
 
   const [selectedImage, setSelectedImage] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-
-  // useEffect(() => {
-  //   ImageModal.setAppElement('#root');
-  // }, []);
 
   useEffect(() => {
     Modal.setAppElement('#root');
@@ -91,33 +85,6 @@ const App = () => {
         image={selectedImage}
         onCloseClick={closeModal}
       />
-      {/* <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        overlayClassName={styles.backdrop}
-        className={styles.modal}
-      >
-        <div className={styles.modalcontainer}>
-          <button className={styles.closeButton} onClick={closeModal}>
-            <RxExit />
-          </button>
-          {selectedImage && (
-            <>
-              <div className={styles.imgContainer}>
-                <img
-                  src={selectedImage.urls.regular}
-                  alt={selectedImage.description}
-                  className={styles.image}
-                />
-              </div>
-              <p className={styles.text}>
-                Author: {selectedImage.user.username}
-              </p>
-              <p className={styles.text}>Likes: {selectedImage.likes} </p>
-            </>
-          )}
-        </div>
-      </Modal> */}
     </div>
   );
 };
